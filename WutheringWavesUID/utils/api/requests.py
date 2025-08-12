@@ -664,7 +664,7 @@ class WavesApi:
     ) -> tuple[bool, str]:
         """请求token"""
         if not force_refresh and roleId in self.bat_map:
-            if self.bat_map[roleId][1] + 5 * 60 > time.time():
+            if self.bat_map[roleId][1] + 1 * 60 > time.time():
                 logger.debug(f"[{roleId}] 缓存读取bat成功: {self.bat_map[roleId]}")
                 return True, self.bat_map[roleId][0]
 
